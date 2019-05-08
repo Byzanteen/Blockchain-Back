@@ -27,6 +27,9 @@ contract Chatgroup {
     }
     
     function sendMessage(string memory text) public {
+        if(fullChat()){
+            makeSpace();
+        }
         messages[i].text = text;
         messages[i].sender = msg.sender;
         i++;
